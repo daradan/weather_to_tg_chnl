@@ -52,8 +52,10 @@ def compare_temp(data: dict) -> str:
     elif compare_day > 0:
         compare_text = 'холоднее'
     else:
-        return f"Завтра 🌡️ {data['temp_next_day_max']}° 🌬️ {data['wind_speed_next']}м/с, как сегодня"
-    return f"Завтра 🌡️ {data['temp_next_day_max']}° 🌬️ {data['wind_speed_next']}м/с, " \
+        return f"Завтра 🌡️ {data['temp_next_day_max']}° 🌬️ {data['wind_speed_next']}м/с " \
+               f"{data['icon_next']} {data['description_next']}, как сегодня"
+    return f"Завтра 🌡️ {data['temp_next_day_max']}° 🌬️ {data['wind_speed_next']}м/с " \
+           f"{data['icon_next']} {data['description_next']}, " \
            f"на {compare_day_str}° {compare_text}, чем сегодня"
     # if compare_day != 0:
     #     return f"Завтра 🌡️ {data['temp_next_day_max']}° 🌬️ {data['wind_speed_next']}м/с, " \
