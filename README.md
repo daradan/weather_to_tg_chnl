@@ -1,4 +1,8 @@
 ## Уведомление о погоде в Telegram
+Работу скрипта можно посмотреть тут:
+- [Погода Астаны](https://t.me/pogodaNQZ)
+- [Погода Алматы](https://t.me/pogodaALA)
+
 Скрипт уведомляет о прогнозе погоды Астаны и Алматы (можно настроить и на другие города).
 Информацию о прогнозе погоды получает из OpenWeatherMap.
 ### Установка и настройка
@@ -20,6 +24,10 @@ TG_CHANNEL_ALMATY=@...
 TG_CHANNEL_ERROR=...
 ```
 ## Telegram weather notification
+You can see how the script works here:
+- [Astana Weather](https://t.me/pogodaNQZ)
+- [Almaty Weather](https://t.me/pogodaALA)
+
 This script notifies you about the weather in Astana and Almaty (can be configured for other cities).
 It gets information about the weather forecast from OpenWeatherMap.
 ### Installation and setup
