@@ -17,3 +17,4 @@ PARAMS_ONECALL = {'appid': os.getenv('API_ID'),
                   'exclude': 'minutely,hourly'
                   }
 PARAMS_AIR_POLLUTION = {'appid': os.getenv('API_ID')}
+URL_HOLIDAYS = 'https://raw.githubusercontent.com/daradan/production_calendar_kz/main/kz_holidays_2.json'

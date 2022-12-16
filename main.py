@@ -10,6 +10,8 @@ class OpenWeatherAPI:
         ...
 
     def start(self):
+        if utils.is_holiday() and not utils.compare_time('09:00'):
+            return
         try:
             for city in config.CITIES_CHANNEL.keys():
                 latitude, longitude = geolocator.check_geolocator(city)

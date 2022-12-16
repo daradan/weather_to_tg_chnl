@@ -1,8 +1,17 @@
 import time
 import json
 import requests
+from datetime import datetime
 
 import config
+
+
+def is_holiday() -> bool:
+    today = int(datetime.today().strftime('%Y%m%d'))
+    holidays = requests.get(config.URL_HOLIDAYS).json()
+    if today in holidays.get('holidays'):
+        return True
+    return False
 
 
 def merge_responses(onecall: dict, air_population: dict) -> dict:
@@ -38,10 +47,11 @@ def make_emojies(icon: str):
         return ''
 
 
-def compare_time() -> bool:
+def compare_time(check_time) -> bool:
     current_time = time.strftime('%H:%M')
-    if current_time > '20:00':
+    if current_time > check_time:
         return True
+    return False
 
 
 def compare_temp(data: dict) -> str:
@@ -74,7 +84,7 @@ def make_text_to_tg(data: dict) -> str:
                  f"<b>O3:</b> {data['o3']}, " \
                  f"<b>PM2.5:</b> {data['pm2_5']}, " \
                  f"<b>PM10:</b> {data['pm10']}"
-    if not compare_time():
+    if not compare_time('20:00'):
         return text_to_tg
     else:
         return compare_temp(data)
